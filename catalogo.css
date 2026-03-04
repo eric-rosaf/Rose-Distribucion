@@ -1,0 +1,115 @@
+/* Contenedor general de cada marca en el catálogo */
+.skinclinic {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 10%;      /* Espacio amplio para que respire */
+    background-color: white; 
+    width: 100%;
+    box-sizing: border-box;
+    gap: 50px;              /* Espacio entre el texto y la imagen */
+}
+
+/* Estilo del texto del catálogo */
+.skinclinic h1 {
+    font-size: 38px;
+    color: #0b2545;         /* Tu azul corporativo */
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.skinclinic p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 30px;
+    max-width: 500px;       /* Evita que las líneas de texto sean muy largas */
+}
+
+/* Imagen del catálogo */
+.skinclinic img {
+    width: 500px;           /* Ajusta según el tamaño de tus fotos */
+    height: auto;
+    border-radius: 15px;    /* Bordes redondeados como tus cuadritos */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Sombra elegante */
+}
+
+/* Si quieres que la siguiente marca tenga la imagen a la izquierda */
+.marca-invertida {
+    flex-direction: row-reverse;
+    background-color: #f9f9f9; /* Un gris casi blanco para diferenciar secciones */
+}
+
+@media (max-width: 768px) {
+    /* Ajuste del Header */
+    header {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .logo img {
+        width: 250px; /* Logo más pequeño en móvil */
+        margin-bottom: 15px;
+    }
+
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    /* Sección Principal: Texto arriba, imagen abajo */
+    .Principal {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .Principal img {
+        position: static; /* Deja de flotar para ocupar su propio espacio */
+        width: 100%;
+        max-width: 400px;
+        margin-top: 30px;
+    }
+
+    .texto {
+        max-width: 100%;
+    }
+
+    /* Catálogos: Imagen arriba y texto abajo */
+    .skinclinic, .skinclinic.marca-invertida {
+        flex-direction: column !important; /* Fuerza el orden vertical siempre */
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .skinclinic img {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    /* Cuadritos de marcas/misión */
+    .contenedor-cuadros {
+        gap: 15px;
+    }
+
+    .cuadro {
+        width: 100%; /* Los cuadros ocupan todo el ancho en móvil */
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .texto h1 {
+        font-size: 30px;
+    }
+
+    .skinclinic h1 {
+        font-size: 28px;
+    }
+
+    .quesomos {
+        padding: 40px 20px; /* Menos espacio a los lados */
+    }
+}
